@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
 class TextOneClipper extends CustomClipper<Path> {
-  final double thickness;
   const TextOneClipper({
     @required this.thickness,
   });
+
+  final double thickness;
+
   @override
   Path getClip(Size size) {
     return Path()

@@ -16,44 +16,63 @@ class OnePlusLogo extends StatefulWidget {
 
 class _OnePlusLogoState extends State<OnePlusLogo>
     with TickerProviderStateMixin {
-  AnimationController _increaseLeftBottomAnimationController;
-  AnimationController _decreaseTopRightAnimationController;
-  AnimationController _rectTocircleAnimationController;
-  AnimationController _innerCircleAnimationController;
-  AnimationController _innerOuterCircleCombineAnimationController;
-  AnimationController _firstCircleMoveUpAnimationController;
-  AnimationController _firstCircleRotateAroundCircleAnimationController;
-  AnimationController _secondCircleMoveUpAnimationController;
-  AnimationController _secondCircleRotateAroundCircleAnimationController;
-  AnimationController _increaseCircleHeightLiquidAnimationController;
-  AnimationController _decreaseCircleHeightLiquidAnimationController;
-  AnimationController _finalCirclesAnimationController;
-  Animation<double> roundnessContainerAnimation;
-  Animation<double> outerContainerSizeAnimation;
-  Animation<double> innerContainerSizeAnimation;
-  Animation<double> innerOuterCircleCombineAnimation;
-  Animation<double> firstCircleMoveUpAnimation;
-  Animation<double> firstCircleRotateAnimation;
-  Animation<double> secondCircleMoveUpAnimation;
-  Animation<double> secondCircleRotateAnimation;
-  Animation<double> increaseCircleHeightLiquidAnimation;
+  static const containerThickness = iconSize / 4;
+  static const iconSize = 36.0;
+  static const outerContainerAfterSmallSize = 40.0;
+
+  final int circleRotationAnimationSeconds = 2 * 3;
   Animation<double> decreaseCircleHeightLiquidAnimation;
+  Animation<double> decreaseTopRightAnimation;
   Animation<double> finalInnerCircleAnimation;
   Animation<double> finalMiddleCircleAnimation;
   Animation<double> finalOuterCircleAnimation;
   Animation<double> finalOuterCircleRadiusAnimation;
-  Animation<double> textSizeAnimation;
-  Animation<double> textFadeAnimation;
+  Animation<double> firstCircleMoveUpAnimation;
+  Animation<double> firstCircleRotateAnimation;
+  Animation<double> increaseCircleHeightLiquidAnimation;
   Animation<double> increaseLeftBottomAnimation;
-  Animation<double> decreaseTopRightAnimation;
-  final int circleRotationAnimationSeconds = 2 * 3;
-
-  static const iconSize = 36.0;
-  static const containerThickness = iconSize / 4;
+  Animation<double> innerContainerSizeAnimation;
+  Animation<double> innerOuterCircleCombineAnimation;
   final outerContainerSize = iconSize * 2.2;
-  static const outerContainerAfterSmallSize = 40.0;
+  Animation<double> outerContainerSizeAnimation;
+  Animation<double> roundnessContainerAnimation;
+  Animation<double> secondCircleMoveUpAnimation;
+  Animation<double> secondCircleRotateAnimation;
   final smallCircleForRotationSize = outerContainerAfterSmallSize / 3;
   final stackSize = iconSize * 2.2 + iconSize / 2 - containerThickness / 2;
+  Animation<double> textFadeAnimation;
+  Animation<double> textSizeAnimation;
+
+  AnimationController _decreaseCircleHeightLiquidAnimationController;
+  AnimationController _decreaseTopRightAnimationController;
+  AnimationController _finalCirclesAnimationController;
+  AnimationController _firstCircleMoveUpAnimationController;
+  AnimationController _firstCircleRotateAroundCircleAnimationController;
+  AnimationController _increaseCircleHeightLiquidAnimationController;
+  AnimationController _increaseLeftBottomAnimationController;
+  AnimationController _innerCircleAnimationController;
+  AnimationController _innerOuterCircleCombineAnimationController;
+  AnimationController _rectTocircleAnimationController;
+  AnimationController _secondCircleMoveUpAnimationController;
+  AnimationController _secondCircleRotateAroundCircleAnimationController;
+
+  @override
+  void dispose() {
+    _increaseLeftBottomAnimationController.dispose();
+    _decreaseTopRightAnimationController.dispose();
+    _rectTocircleAnimationController.dispose();
+    _innerCircleAnimationController.dispose();
+    _innerOuterCircleCombineAnimationController.dispose();
+    _firstCircleMoveUpAnimationController.dispose();
+    _firstCircleRotateAroundCircleAnimationController.dispose();
+    _secondCircleMoveUpAnimationController.dispose();
+    _secondCircleRotateAroundCircleAnimationController.dispose();
+    _increaseCircleHeightLiquidAnimationController.dispose();
+    _decreaseCircleHeightLiquidAnimationController.dispose();
+    _finalCirclesAnimationController.dispose();
+
+    super.dispose();
+  }
 
   @override
   void initState() {
@@ -324,24 +343,6 @@ class _OnePlusLogoState extends State<OnePlusLogo>
         _increaseLeftBottomAnimationController.forward();
       }
     });
-  }
-
-  @override
-  void dispose() {
-    _increaseLeftBottomAnimationController.dispose();
-    _decreaseTopRightAnimationController.dispose();
-    _rectTocircleAnimationController.dispose();
-    _innerCircleAnimationController.dispose();
-    _innerOuterCircleCombineAnimationController.dispose();
-    _firstCircleMoveUpAnimationController.dispose();
-    _firstCircleRotateAroundCircleAnimationController.dispose();
-    _secondCircleMoveUpAnimationController.dispose();
-    _secondCircleRotateAroundCircleAnimationController.dispose();
-    _increaseCircleHeightLiquidAnimationController.dispose();
-    _decreaseCircleHeightLiquidAnimationController.dispose();
-    _finalCirclesAnimationController.dispose();
-
-    super.dispose();
   }
 
   @override

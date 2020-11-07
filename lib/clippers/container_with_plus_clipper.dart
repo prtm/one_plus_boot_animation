@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 
 class LogoContainerWithPlusClipper extends CustomClipper<Path> {
-  final double thickness;
-  final double iconSize;
-  final double spaceBetweenPlusAndContainer;
-  final double increaseLeftBottomAnimationValue;
-  final double decreaseTopRightAnimationValue;
   const LogoContainerWithPlusClipper(
       {@required this.thickness,
       @required this.iconSize,
       this.spaceBetweenPlusAndContainer = 8.0,
       this.increaseLeftBottomAnimationValue,
       this.decreaseTopRightAnimationValue});
+
+  final double decreaseTopRightAnimationValue;
+  final double iconSize;
+  final double increaseLeftBottomAnimationValue;
+  final double spaceBetweenPlusAndContainer;
+  final double thickness;
+
   @override
   Path getClip(Size size) {
     var barSize = iconSize / 2 - thickness / 2;
@@ -64,6 +66,7 @@ class LogoContainerWithPlusClipper extends CustomClipper<Path> {
 
   @override
   bool shouldReclip(LogoContainerWithPlusClipper oldClipper) => true;
+
   // @override
   // bool shouldReclip(LogoContainerWithPlusClipper oldClipper) =>
   //     oldClipper.spaceBetweenPlusAndContainer != spaceBetweenPlusAndContainer ||
@@ -73,4 +76,5 @@ class LogoContainerWithPlusClipper extends CustomClipper<Path> {
   //         increaseLeftBottomAnimationValue ||
   //     oldClipper.decreaseTopRightAnimationValue !=
   //         decreaseTopRightAnimationValue;
+
 }
