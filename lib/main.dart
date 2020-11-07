@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'One Plus Demo',
       theme: getAppTheme(),
+      debugShowCheckedModeBanner: false,
       home: MyHomePage(title: 'One Plus Animation Demo'),
     );
   }
