@@ -14,7 +14,6 @@ class LogoContainerWithPlusClipper extends CustomClipper<Path> {
       this.decreaseTopRightAnimationValue});
   @override
   Path getClip(Size size) {
-    // print('$decreaseTopRightAnimationValue, $increaseLeftBottomAnimationValue');
     var barSize = iconSize / 2 - thickness / 2;
     var totalSpace = iconSize + spaceBetweenPlusAndContainer;
 

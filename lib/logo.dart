@@ -249,9 +249,7 @@ class _OnePlusLogoState extends State<OnePlusLogo>
             curve: Curves.decelerate,
           )),
     )..addListener(() {
-        setState(() {
-          print(_secondCircleRotateAroundCircleAnimationController.status);
-        });
+        setState(() {});
       });
 
     increaseCircleHeightLiquidAnimation = Tween<double>(
